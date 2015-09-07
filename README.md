@@ -1,7 +1,7 @@
 # Binary Bomb: Defusing a Binary Bomb
 ## Assignment 2
 
-##1 Introduction
+## Introduction
 The nefarious *Dr. Evil* has planted a slew of “binary bombs” on our class machines.  A binary bomb is a program that consists of a sequence of phases. Each phase expects you to type a particular string on *stdin*. If you type the correct string, then the phase is *defused* and the bomb proceeds to the next phase. Otherwise, the bomb *explodes* by printing *"BOOM!!!"* and then terminating. The bomb is defused when every phase has been defused.
 
 There are too many bombs for us to deal with, so we are giving each student a bomb to defuse. Your mission, which you have no choice but to accept, is to defuse your bomb before the due date. Good luck, and welcome to the bomb squad!
@@ -17,12 +17,12 @@ This will display a binary bomb request form for you to fill in. Enter your user
 Save the *bombk.tar* file to a (protected) directory in which you plan to do your work. Then give the command: *tar -xvf bombk.tar*  
 
 This will create a directory called *./bombk* with the following files:
-
+
 * **README:** Identifies the bomb and its owners.
 * **bomb:** The executable binary bomb.
-* **bomb.c:** Source file with the bomb’s main routine and a friendly greeting from Dr. Evil.
+* **bomb.c:** Source file with the bomb’s main routine and a friendly greeting from Dr. Evil.
 
-If for some reason you request multiple bombs, this is not a problem. Choose one bomb to work on and delete the rest. Or you could choose to solve multiple; however, only one will be graded.
+If for some reason you request multiple bombs, this is not a problem. Choose one bomb to work on and delete the rest. Or you could choose to solve multiple; however, only one will be graded.
 
 ###Step 2: Defuse Your Bomb
 
@@ -66,11 +66,11 @@ We do make one request, *please do not use brute force!* You could write a progr
 
 * You lose 1/2 point (up to a max of 20 points) every time you guess incorrectly and the bomb explodes.
 * Every time you guess wrong, a message is sent to the bomblab server. You could very quickly saturate the network with these messages, and cause the server to block your computer.
-* We haven’t told you how long the strings are, nor have we told you what characters are in them. Even if you made the (incorrect) assumptions that they all are less than 80 characters long and only contain letters, then you will have *26^80* guesses for each phase.  This will take a very long time to run, and
+* We haven’t told you how long the strings are, nor have we told you what characters are in them. Even if you made the (incorrect) assumptions that they all are less than 80 characters long and only contain letters, then you will have *26^80* guesses for each phase.  This will take a very long time to run, and
 you will not get the answer before the assignment is due.
 
 There are many tools which are designed to help you figure out both how programs work, and what is wrong when they don’t work. Here is a list of some of the tools you may find useful in analyzing your bomb, and hints on how to use them.
-
+
 * *gdb:* The GNU debugger, this is a command line debugger tool available on virtually every platform. You can trace through a program line by line, examine memory and registers, look at both the source code and assembly code (we are not giving you the source code for most of your bomb), set breakpoints, set memory watch points, and write scripts.
 	* The CS:APP web site: http://csapp.cs.cmu.edu/public/students.html
 	has a very handy single-page *gdb* summary that you can print out and use as a reference. Here are some other tips for using *gdb*.
@@ -86,7 +86,7 @@ There are many tools which are designed to help you figure out both how programs
 		8048c36:  e8 99 fc ff ff  call   80488d4 <_init+0x1a0>
 </pre>
 	To determine that the call was to *sscanf*, you would need to disassemble within *gdb*.
-	
+
 * *strings*	This utility will display the printable strings in your bomb.
 
 Looking for a particular tool? How about documentation?  Don’t forget, the commands *apropos*, *man*, and *info* are your friends.  In particular, *man ascii* might come in useful. *info gas*	will give you more than you ever wanted to know about the GNU Assembler. Also, the web may also be a treasure trove of information. If you get stumped, feel free to ask your instructor for help.
